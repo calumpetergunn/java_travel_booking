@@ -3,6 +3,7 @@ import org.junit.Test;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class FlightManagerTest {
 
@@ -49,7 +50,7 @@ public class FlightManagerTest {
     public void canBookTrip(){
         flightManager.bookTrip(flight, passenger);
         assertEquals(1, flight.getPassengerListSize());
-        assertEquals("AKL", passenger.getFlight().getDestination()
-        );
+        assertEquals("AKL", passenger.getFlight().getDestination());
+        assertNotEquals(0, passenger.getSeatNumber());
     }
 }

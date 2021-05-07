@@ -3,11 +3,13 @@ public class Passenger {
     private String name;
     private int bags;
     private Flight flight;
+    private int seatNumber;
 
     public Passenger(String name, int bags){
         this.name = name;
         this.bags = bags;
         this.flight = null;
+        this.seatNumber = 0;
     }
 
     public String getName(){
@@ -24,6 +26,14 @@ public class Passenger {
 
     public void addFlight(Flight flight){
         this.flight = flight;
+    }
+
+    public int getSeatNumber(){
+        return this.seatNumber;
+    }
+
+    public void assignSeatNumber(int newSeatNumber){
+        this.seatNumber = newSeatNumber;
     }
 
 }
