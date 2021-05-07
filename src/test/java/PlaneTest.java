@@ -24,7 +24,7 @@ public class PlaneTest {
 
     @Test
     public void planeHasPayload(){
-        assertEquals(112760, plane.getPlanePayload());
+        assertEquals(20000, plane.getPlanePayload());
     }
 
 }
