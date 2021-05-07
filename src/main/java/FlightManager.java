@@ -7,9 +7,9 @@ public class FlightManager {
     }
 
     public int calculateWeightPerPassengerAllocation(){
-        int overallWeight = flight.getPlane().getPayload() / 2;
-        int passengerAllocation = (int)Math.ceil((double)overallWeight / flight.getPlane().getCapacity());
-        return passengerAllocation;
+        double overallWeight = flight.getPlane().getPayload() / 2;
+        double passengerAllocation = overallWeight / flight.getPlane().getCapacity();
+        return (int)Math.ceil(passengerAllocation);
     }
 
     public int calculateBookedWeight(){
@@ -18,6 +18,12 @@ public class FlightManager {
 
     public int calculateWeightRemainingOnFlight(){
         return flight.getPlane().getPayload() - this.calculateBookedWeight();
+    }
+
+    public void bookTrip(Flight flight, Passenger passenger){
+        flight.addPassengerToFlight(passenger);
+        passenger.addFlight(flight);
+
     }
 
 

@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
@@ -9,6 +10,7 @@ public class FlightManagerTest {
     Flight flight;
     Plane plane;
     Passenger passenger;
+
 
     @Before
     public void setUp(){
@@ -41,5 +43,13 @@ public class FlightManagerTest {
         flight.addPassengerToFlight(passenger);
         flight.addPassengerToFlight(passenger);
         assertEquals(2376, flightManager.calculateWeightRemainingOnFlight());
+    }
+
+    @Test
+    public void canBookTrip(){
+        flightManager.bookTrip(flight, passenger);
+        assertEquals(1, flight.getPassengerListSize());
+        assertEquals("AKL", passenger.getFlight().getDestination()
+        );
     }
 }

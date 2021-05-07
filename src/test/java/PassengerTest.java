@@ -22,4 +22,9 @@ public class PassengerTest {
         assertEquals(3, passenger.getBags());
     }
 
+    @Test
+    public void flightStartsAtNull(){
+        assertEquals(null, passenger.getFlight());
+    }
+
 }
