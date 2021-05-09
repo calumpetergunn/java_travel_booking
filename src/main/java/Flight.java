@@ -8,9 +8,9 @@ public class Flight {
     private String flightNumber;
     private String destination;
     private String origin;
-    private String departTime;
+    private LocalTime departTime;
 
-    public Flight(Plane plane, String flightNumber, String destination, String origin, String departTime){
+    public Flight(Plane plane, String flightNumber, String destination, String origin, LocalTime departTime){
         this.passengerList = new ArrayList<>();
         this.plane = plane;
         this.flightNumber = flightNumber;
@@ -39,7 +39,7 @@ public class Flight {
         return this.origin;
     }
 
-    public String getDepartTime(){
+    public LocalTime getDepartTime(){
         return this.departTime;
     }
 

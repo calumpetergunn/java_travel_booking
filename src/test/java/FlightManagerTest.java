@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 
+import java.time.LocalTime;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -16,7 +18,7 @@ public class FlightManagerTest {
     @Before
     public void setUp(){
         plane = new Plane(PlaneType.DOUGLASDC3);
-        flight = new Flight(plane, "NZ75", "AKL", "LDN", "10:45");
+        flight = new Flight(plane, "NZ75", "AKL", "LDN", LocalTime.of(10,45));
         flightManager = new FlightManager(flight);
         passenger = new Passenger("Roger", 2);
     }
